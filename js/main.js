@@ -40,3 +40,88 @@ const textCollection = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
+const imagesRef = document.querySelector('.images');
+const ithumbsRef = document.querySelector('.thumbs');
+
+// Indice immagine carousel attiva
+let activeImage = 1;
+
+for (let i = 0; i < imageCollection.length; i++) {
+    // Images
+    imagesRef.innerHTML += `<div class="image-container">
+    <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+        <div class="text">
+            <h3>${titleCollection[i]}</h3>
+            <p>${textCollection[i]}</p>
+        </div>
+    </div>`;
+
+    // Thumbs
+    ithumbsRef.innerHTML += `
+    <div class="thumb">
+        <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+    </div>`
+}
+
+// Set active image and thumbnail
+document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+
+document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+
+// Next image
+
+const next = document.querySelector('.next');
+
+next.addEventListener('click', function() {
+    // Update active img index
+    
+    // Infinite loop navigation
+    if (activeImage === imageCollection.length - 1) {
+        activeImage = 0;
+    } else {
+        activeImage++;
+    }
+
+    // Set active image: reset current and set next one
+    // Reset current
+    document.querySelector('.image-container.active').classList.remove('active')
+
+    // Active next
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active')
+
+    // Set thumbnail
+    // Reset current
+    document.querySelector('.thumb.active').classList.remove('active')
+
+    // Active next
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active')
+})
+
+// Prev image
+
+const prev = document.querySelector('.prev');
+
+prev.addEventListener('click', function() {
+    // Update active img index
+    
+    // Infinite loop navigation
+    if (activeImage === 0) {
+        activeImage = 4;
+    } else {
+        activeImage--;
+    }
+
+    // Set active image: reset current and set next one
+    // Reset current
+    document.querySelector('.image-container.active').classList.remove('active')
+
+    // Active next
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active')
+
+    // Set thumbnail
+    // Reset current
+    document.querySelector('.thumb.active').classList.remove('active')
+
+    // Active next
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active')
+})
