@@ -84,7 +84,8 @@ body {
     transform: translateX(-50%);
     width: 20px;
     height: 20px;
-    background: #ccc;
+    font-size: 1.5em;
+    color: white;
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
