@@ -106,7 +106,7 @@ prev.addEventListener('click', function() {
     
     // Infinite loop navigation
     if (activeImage === 0) {
-        activeImage = 4;
+        activeImage = imageCollection.length - 1;
     } else {
         activeImage--;
     }
