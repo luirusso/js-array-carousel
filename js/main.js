@@ -60,7 +60,7 @@ for (let i = 0; i < imageCollection.length; i++) {
     ithumbsRef.innerHTML += `
     <div class="thumb">
         <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
-    </div>`
+    </div>`;
 }
 
 // Set active image and thumbnail
@@ -84,17 +84,17 @@ next.addEventListener('click', function() {
 
     // Set active image: reset current and set next one
     // Reset current
-    document.querySelector('.image-container.active').classList.remove('active')
+    document.querySelector('.image-container.active').classList.remove('active');
 
     // Active next
-    document.getElementsByClassName('image-container')[activeImage].classList.add('active')
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active');
 
     // Set thumbnail
     // Reset current
-    document.querySelector('.thumb.active').classList.remove('active')
+    document.querySelector('.thumb.active').classList.remove('active');
 
     // Active next
-    document.getElementsByClassName('thumb')[activeImage].classList.add('active')
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active');
 })
 
 // Prev image
@@ -113,15 +113,15 @@ prev.addEventListener('click', function() {
 
     // Set active image: reset current and set next one
     // Reset current
-    document.querySelector('.image-container.active').classList.remove('active')
+    document.querySelector('.image-container.active').classList.remove('active');
 
     // Active next
-    document.getElementsByClassName('image-container')[activeImage].classList.add('active')
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active');
 
     // Set thumbnail
     // Reset current
-    document.querySelector('.thumb.active').classList.remove('active')
+    document.querySelector('.thumb.active').classList.remove('active');
 
     // Active next
-    document.getElementsByClassName('thumb')[activeImage].classList.add('active')
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active');
 })
